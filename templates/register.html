@@ -19,14 +19,14 @@
     <br>
     <br>
     <button type="submit">注册</button>
-    <a href="http://127.0.0.1:8000/loginandregister/login/"><button type="button">返回登陆</button></a>
+    <a href="../login/"><button type="button">返回登陆</button></a>
     <br>
     <br>
     {% if success %}
-        <a href="http://127.0.0.1:8000/loginandregister/login/">{{ success }}</a>
+        <a href="../login/">{{ success }}</a>
     {% endif %}
     {% if error %}
-        <a href="http://127.0.0.1:8000/loginandregister/login/">{{ error }}</a>
+        <a href="../login/">{{ error }}</a>
     {% endif %}
     {% if errorn %}
     {{ errorn }}

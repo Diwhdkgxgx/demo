@@ -15,7 +15,7 @@ def login(requset):
         username1 = requset.POST.get('username1')
         password1 = requset.POST.get('password1')
         if username1 in User and password1 == User[username1]:
-            response = redirect("http://127.0.0.1:8000/loginandregister/main/")
+            response = redirect("../main/")
             return response
         elif username1 not in User:
             error = {'error': '用户不存在，请注册！'}

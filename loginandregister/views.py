@@ -15,7 +15,7 @@ def login(requset):
         username1 = requset.POST.get('username1')
         password1 = requset.POST.get('password1')
         if username1 in User and password1 == User[username1]:
-            response = redirect("../main/")
+            response = redirect("/loginandregister/main/") #为什么这里的路径用"../main"效果也一样
             return response
         elif username1 not in User:
             error = {'error': '用户不存在，请注册！'}
@@ -48,6 +48,9 @@ def regisiter(request):
             elif len(username2) > 10:
                 errorn = {'errorn': '用户名长度不得超过10位！'}
                 return render(request, 'register.html', errorn)
+            elif len(password2) < 3:
+                errorn = {'errorn': '密码长度不得少于3位！'}
+                return render(request, 'register.html', errorn)
             elif len(password2) > 10:
                 errorn = {'errorn': '密码长度不得超过10位！'}
                 return render(request, 'register.html', errorn)
@@ -65,3 +68,5 @@ def islegal(password):
         if i not in legal:
             return 0
 
+def welcome(request):
+    return render(request, 'welcome.html')

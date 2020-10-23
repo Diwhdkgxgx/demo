@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+</body>
+<h1  style="font-size:30px">请登录</h1>
+<form method="post" action="{% url 'loginandregister:login' %}">
+{% csrf_token %}
+    <label>用户名</label>
+    <input name="username1" ></input>
+    <!--
+    <textarea name="username1"></textarea>-->
+    <br>
+    <label>密码</label>
+    <input name="password1" type="password"></input>
+    <br>
+    <br>
+    <button type="submit">登陆</button>
+    <a href="http://127.0.0.1:8000/loginandregister/register/"><button type="button">注册</button></a>
+    <br>
+    <br>
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+</form>
+</body>
+</html>

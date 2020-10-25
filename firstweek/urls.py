@@ -13,15 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+
 from django.contrib import admin
 from django.urls import path, include, re_path
-
+#用于将某个页面设置成主页
 from loginandregister import views
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('loginandregister/', include(('loginandregister.urls','loginandregister'),namespace= 'loginandregister')),
-    url(r'^$', views.login),
+    url(r'^$', views.login),#设置主页
 ]
 
